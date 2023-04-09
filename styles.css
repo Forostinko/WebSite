@@ -16,6 +16,9 @@
 .bgn-image {
     background-image: url(./Asets/img/head_img.jpg);
     padding-bottom: 388px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .header {
@@ -121,7 +124,7 @@
 }
 
 .chooses-card {
-    flex: 0 0 425px;
+    flex: 0 1 425px;
     padding: 20px;
     font-family: Poppins;
     font-size: 18px;
@@ -158,6 +161,16 @@
 .chooses-card-link {
     text-decoration: none;
     color: #F79489;
+}
+
+@media screen and (max-width: 860px) {
+    .chooses-header {
+        display: none;
+    }
+    .chooses {
+        flex-direction: column;
+    }
+    
 }
 /* ==================================================== */
 
@@ -234,7 +247,7 @@
 }
 
 .product-card {
-    flex: 0 0 425px;
+    flex: 0 1 425px;
     padding: 20px;
     font-family: Poppins;
     font-size: 18px;
@@ -410,8 +423,6 @@
 .bgn-footer {
     padding-top: 100px;
     margin-top: 200px;
-    width: 1920px;
-    height: 600px;
     background: linear-gradient(275.58deg, #000000 0%, #4B4B4B 100%);
 }
 
