@@ -368,19 +368,34 @@
     margin-bottom: 20px;
 }
 
-.button-search {
+.inf-search-blok {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 8px;
+    padding-left: 20px;
     margin-top: 40px;
-    display: block; 
     width: 400px;
     height: 60px;
     background: #FEFCFB;
     border: 1px solid #FADCD9;
     border-radius: 30px;
-    margin-bottom: 392px;
 }
 
-.button-search::placeholder {
-    padding-left: 20px;
+.box-search {
+    border: none;
+    font-size: 14px;
+    width: 340px;
+    color: #F79489;
+    font-family: "Poppins";
+}
+
+.box-search:focus {
+    outline: none;
+}
+
+
+.box-search::placeholder {
     font-family: "Poppins";
     font-size: 14px;
     color: #F79489;
@@ -393,34 +408,63 @@
 /* ==================================================== */
 
 .bgn-footer {
+    padding-top: 100px;
+    margin-top: 200px;
     width: 1920px;
     height: 600px;
     background: linear-gradient(275.58deg, #000000 0%, #4B4B4B 100%);
 }
 
-/* .container {
-    display: block;
-} */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-box{
+    /* display: flex; */
+    font-family: 'Poppins';
+    padding: 24px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFFFFF;
+}
 
 .footer-header {
-    display: flex;
-}
-
-.footer-logo {
-    margin-top: 80px;
-    margin-bottom: 430px;
-}
-
-
-/* .footer__item {
-    display: flex;
-} */
-
-.header-nav-footer > .nav-element-footer {
-    justify-content: space-between;
+    padding-bottom: 20px;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
     color: #FADCD9;
+}
+
+.footer-inf {
+    outline: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFFFFF;
+}
+
+.footer-inf-link {
+    padding-bottom: 24px;
+    list-style: none;
+}
+
+.footer-inf-link a {
+    text-decoration: none;
+}
+
+.footer-inf-link a:visited {
+    color: #FFFFFF;
+}
+
+.inf-footer {
+    text-decoration: none;
+    padding-top: 197px;
+    padding-bottom: 40px;
+    color: #FFFFFF;
 }
