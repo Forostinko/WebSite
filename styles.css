@@ -56,7 +56,6 @@
 
 .interior-slogan {
     margin-top: 161px;
-    /* margin-top: 165px; */
     font-family: Poppins;
     font-size: 48px;
     font-weight: bold;
@@ -84,7 +83,7 @@
 }
 
 .interior-search::placeholder {
-    padding-left: 19px;
+    padding-left: 19px;  
     font-family: "Poppins";
     font-size: 14px;
     color: white;
@@ -169,8 +168,12 @@
     }
     .chooses {
         flex-direction: column;
+    } 
+    .chooses-card { 
+        flex-basis: auto;
+        margin-left: 20px;
+        margin-right: 20px;
     }
-    
 }
 /* ==================================================== */
 
@@ -196,10 +199,6 @@
     color:  #564E4E;
     padding-bottom: 20px;
 }
-
-/* .inf-description {
-    font-family: Poppins;
-} */
 
 .inf-description-container {
     display: flex;
@@ -279,6 +278,11 @@
     color: #DFB300;
 }
 
+@media screen and (max-width: 860px) {
+   .product-inf {
+    flex-wrap: wrap;
+   }
+}
 /* ==================================================== */
 
 .review-box {
