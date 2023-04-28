@@ -4,6 +4,7 @@
     padding: 0;
 }
 
+
 .container {
     max-width: 1760px;
     margin: 0 auto;
@@ -26,7 +27,16 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 38px;
+    height: 100%;
 }
+
+.hamb {
+    display: none;
+  }
+  
+  .popup {
+    display: none;
+  }
 
 .header-nav {
     padding-right: 94px;
@@ -105,6 +115,123 @@
     left: 313px;
 }
 
+@media screen and (max-width: 376px) {
+    .bgn-image {   
+        max-width: 100%; 
+    }
+    .interior-slogan {
+        font-size: 18px;
+    }
+    .interior-text {
+        font-size: 12px; 
+    }
+    .search-blok {
+        width: 280px;
+        height: 38px;
+        left: 50px;
+        top: 251px;
+
+        border-radius: 30px;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+  
+    .hamb {
+      display: flex;
+      align-items: center;
+    }
+  
+    .hamb__field {
+      width: 24px;
+      height: 24px;
+      left: 331px;
+      top: 22px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  
+    .bar {
+      display: block;
+      width: 20px;
+      left: 2px;
+      margin: 6px auto;
+      transition: 0.2s;
+      
+      border: 2px solid #FFFFFF;
+    }
+  
+    .popup {
+      position: fixed;
+      top: 75px;
+      /* чтобы скрыть его в right части */
+      right: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      z-index: 100;
+      display: flex;
+      /* А чтобы он делал это плавно мы добавили к popup свойство transition: 0.3s. */
+      transition: 0.3s;
+    }
+  
+    .popup.open {
+      right: 0;
+    }
+  
+    .popup .menu {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding: 50px 0;
+      overflow: auto;
+    }
+  
+    .popup .menu > li {
+      width: 100%;
+    }
+  
+    .popup .menu > li > a {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: #3f3f3f;
+    }
+  
+    .popup .menu > li > a:hover {
+      background-color: rgba(122, 82, 179, 0.1);
+    }
+  
+    /* При нажатии на иконку бургер к попапу добавится класс active и свойство left будет равным 0. 
+    То есть наш попап открывается справо.  */
+    .hamb__field.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .hamb__field.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+  
+    .hamb__field.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  
+    /* Также при вызове popup мы блокируем прокрутку экрана у глобального тега body. 
+    Для этого добавляем ему класс body.noscroll со значением overflow: hidden. */
+    
+    body.noscroll {
+      overflow: hidden;
+    }
+  }
+    
+
 /* ==================================================== */
 .chooses-header {
     margin-top: 80px;
@@ -174,23 +301,25 @@
         margin-left: 20px;
         margin-right: 20px;
     }
-}
+}  
+
 /* ==================================================== */
 
 .information-container {
     display: flex;
     justify-content: space-between;
     white-space: normal;
+    margin-top: 200px;
 }
 
 .inf-card {
-    /* flex: 0 0 806px; */
+    width: 48%;
+    margin-left: 65px;  
     padding: 20px;
     font-family: Poppins;
     font-size: 18px;
     line-height: 200%;
     box-sizing: border-box;
-    margin-top: 200px;
 }
 
 .inf-header {
@@ -220,11 +349,32 @@
     color: #F79489;
 }
 
+.inf-image {
+    width: 48%;
+}
+
 .inf-image img {
     height: auto;
     max-width: 870px;
+    width: 100%;
     border-radius: 60px 60px 0px 60px;
-    margin-top: 211px;
+    /* margin-top: 211px; */
+}
+
+@media screen and (max-width: 375px) {
+    .inf-image img {   
+        width: 346.55px;
+        height: 232px;
+        left: 14.22px;
+        top: 1166px;
+
+        border-radius: 20px 20px 0px 20px; 
+    }
+    .inf-card {
+        width: 115px;
+        height: 24px;
+        left: 20px;
+    }
 }
 
 /* ==================================================== */
@@ -259,6 +409,11 @@
     justify-content: center;
 }
 
+.product-image img {
+    max-width: 100%;
+}
+ 
+
 .product-card:hover {
     background-color:  #F6F6F6;
 }
@@ -267,8 +422,7 @@
     font-size: 18px;
 }
 
-.chooses-card-text {
-    /* margin-bottom: 10px; */
+.chooses-card-text { 
     font-size: 14px;
     line-height: 200%;
     color: #C4C4C4;
@@ -280,9 +434,16 @@
 
 @media screen and (max-width: 860px) {
    .product-inf {
-    flex-wrap: wrap;
+         flex-wrap: wrap;
+   }
+   .chooses-header {
+        width: 157px;
+        height: 36px;
+        left: 109px;
+        top: 2092px;
    }
 }
+
 /* ==================================================== */
 
 .review-box {
@@ -367,13 +528,21 @@
     color: #564E4E;
 }
 
+@media screen and (max-width: 375px) {
+    .review-box {
+        width: 374px;
+        height: 860px;
+        left: 1px;
+    }
+ }
+
 /* ==================================================== */
 
 .inf-image-left img {
+    width: 100%;
     height: auto;
     max-width: 870px;
     border-radius: 60px 60px 60px 0px;
-    margin-top: 211px;
 }
 
 .inf-card {
@@ -392,7 +561,7 @@
     padding-right: 8px;
     padding-left: 20px;
     margin-top: 40px;
-    width: 400px;
+    width: 60%;
     height: 60px;
     background: #FEFCFB;
     border: 1px solid #FADCD9;
@@ -422,6 +591,12 @@
     margin-top: 20px;
 }
 
+@media screen and (max-width: 860px) {
+    .inf-image-left img {
+        border-radius: 20px 20px 0px 20px;
+    }
+ }
+
 /* ==================================================== */
 
 .bgn-footer {
@@ -435,8 +610,7 @@
     justify-content: space-between;
 }
 
-.footer-box{
-    /* display: flex; */
+.footer-box {
     font-family: 'Poppins';
     padding: 24px;
     font-weight: 400;
@@ -484,3 +658,10 @@
     padding-bottom: 40px;
     color: #FFFFFF;
 }
+
+@media screen and (max-width: 375px) {
+    .footer-logo {
+        width: 124px;
+        height: 36px;
+    }
+ }
