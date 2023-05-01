@@ -389,7 +389,7 @@
 
 .inf-image {
     height: auto;
-    width: 100%;
+    width: 48%;
 }
 
 .inf-image img {
@@ -478,14 +478,14 @@
 @media screen and (max-width: 1000px) {
 
    .product-inf {
-         flex-wrap: wrap;
-         flex-direction: column;
-         /* grid-template-areas: 
+         display: grid;
+         grid-template-areas: 
          "card1"
          "card2"
          "card3"
          "card4";
-         grid-template-columns: 2fr; */
+         grid-template-columns: 2fr 2fr;
+
    }
    .chooses-header {
         height: 36px;
@@ -680,15 +680,11 @@
     .inf-image-left img {
         max-width: 48%;
         border-radius: 20px 20px 0px 20px;
-        margin-right: 14.22px;
-        margin-left: 14.22px;
+        margin-right: 14px;
+        margin-left: 14px;
     }
     .inf-card {
         width: 48%;
-    }
-
-    .inf-card {
-        max-width: 48%;
     }
  }
 
