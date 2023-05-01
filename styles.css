@@ -20,6 +20,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    /* not work */
+    max-width: 100%;  
 }
 
 .header {
@@ -115,41 +117,65 @@
     left: 313px;
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 1000px) {
+
     .bgn-image {   
+        /* not work */
         max-width: 100%; 
     }
+
+    .logo {
+        width: 86px;
+        height: 25px;
+        left: 20px;
+        top: 20px;
+    }
+
+    .basket {
+        width: 24px;
+        height: 24px;
+        left: 297px;
+        top: 22px;
+    }
+
+    /* .hamb__field {
+        width: 24px;
+        height: 24px;
+        left: 297px;
+        top: 22px;
+    } */
+
     .interior-slogan {
         font-size: 18px;
     }
     .interior-text {
         font-size: 12px; 
     }
-    .search-blok {
+    .interior-search {
         width: 280px;
         height: 38px;
-        left: 50px;
-        top: 251px;
-
+        border: 1px solid #FFFFFF;
         border-radius: 30px;
     }
-}
 
+    .search-blok {
+        width: 280px;
+        margin: 0 auto;
+    }    
+}
 
 @media screen and (max-width: 1000px) {
   
     .hamb {
       display: flex;
-      align-items: center;
+      margin-left: auto;
+      /* align-items: center; */
     }
   
     .hamb__field {
-      width: 24px;
-      height: 24px;
-      left: 331px;
-      top: 22px;
-      padding: 10px 20px;
+      /* padding: 10px 20px; */
       cursor: pointer;
+      margin-right: 20px;
     }
   
     .bar {
@@ -209,7 +235,7 @@
       background-color: rgba(122, 82, 179, 0.1);
     }
   
-    /* При нажатии на иконку бургер к попапу добавится класс active и свойство left будет равным 0. 
+    /* При нажатии на иконку бургер к попапу добавится класс active и свойство right будет равным 0. 
     То есть наш попап открывается справо.  */
     .hamb__field.active .bar:nth-child(2) {
       opacity: 0;
@@ -225,14 +251,15 @@
   
     /* Также при вызове popup мы блокируем прокрутку экрана у глобального тега body. 
     Для этого добавляем ему класс body.noscroll со значением overflow: hidden. */
-    
+
     body.noscroll {
       overflow: hidden;
     }
   }
     
 
-/* ==================================================== */
+/* 2 ==================================================== */
+
 .chooses-header {
     margin-top: 80px;
     margin-bottom: 16px;
@@ -289,7 +316,12 @@
     color: #F79489;
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 1000px) {
+
+    .information-container {
+        flex-direction: column-reverse;
+    }
+
     .chooses-header {
         display: none;
     }
@@ -301,9 +333,14 @@
         margin-left: 20px;
         margin-right: 20px;
     }
+
+    .card-icon-circle {
+        width: 28px;
+        height: 28px;
+    }
 }  
 
-/* ==================================================== */
+/* 3  ==================================================== */
 
 .information-container {
     display: flex;
@@ -314,7 +351,8 @@
 
 .inf-card {
     width: 48%;
-    margin-left: 65px;  
+    margin-left: 80px; 
+    margin-right: 18px;
     padding: 20px;
     font-family: Poppins;
     font-size: 18px;
@@ -350,7 +388,8 @@
 }
 
 .inf-image {
-    width: 48%;
+    height: auto;
+    width: 100%;
 }
 
 .inf-image img {
@@ -358,26 +397,30 @@
     max-width: 870px;
     width: 100%;
     border-radius: 60px 60px 0px 60px;
-    /* margin-top: 211px; */
+    margin-right: 65px;
 }
 
-@media screen and (max-width: 375px) {
-    .inf-image img {   
-        width: 346.55px;
-        height: 232px;
-        left: 14.22px;
-        top: 1166px;
+@media screen and (max-width: 1000px) {
 
-        border-radius: 20px 20px 0px 20px; 
+    .inf-image {
+        width: 48%;
+        padding-bottom: 100px;
+        padding-left: 14.22px;
+        padding-right: 14.22px;
     }
+
     .inf-card {
-        width: 115px;
-        height: 24px;
-        left: 20px;
+        padding-left: 20px;
+        font-size: 12px;
     }
+
+    .inf-header {
+        font-size: 18px;
+        padding-left: 20px;
+    }  
 }
 
-/* ==================================================== */
+/*  4 ==================================================== */
 
 .chooses-header {
     margin-top: 200px;
@@ -432,19 +475,26 @@
     color: #DFB300;
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 1000px) {
+
    .product-inf {
          flex-wrap: wrap;
+         flex-direction: column;
+         /* grid-template-areas: 
+         "card1"
+         "card2"
+         "card3"
+         "card4";
+         grid-template-columns: 2fr; */
    }
    .chooses-header {
-        width: 157px;
         height: 36px;
-        left: 109px;
-        top: 2092px;
+        display: flex;
+        margin-left: 109px;
    }
 }
 
-/* ==================================================== */
+/*  5 ==================================================== */
 
 .review-box {
     background: linear-gradient(279.85deg, #FFFFFF 0%, #FAF5F2 100%);
@@ -528,21 +578,50 @@
     color: #564E4E;
 }
 
-@media screen and (max-width: 375px) {
-    .review-box {
-        width: 374px;
-        height: 860px;
-        left: 1px;
+@media screen and (max-width: 1000px) {
+
+    .review  {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .review__item {
+        margin: 0 28px;
+        padding-bottom: 40px;
+    }
+
+    .review-box > div > .title {
+        font-size: 18px;
+        padding-top: 40px;
+    }
+
+    .review__item > .title {
+        font-size: 14px;
+        line-height: 28px;
+    }
+
+    .review__item > .description {
+        font-size: 12px;
+    }
+    
+    .review-user-box {
+        margin-top: 14px;
+    }
+
+    .review-user-box__right .title {
+        font-size: 14px;
+        line-height: 28px; 
     }
  }
 
-/* ==================================================== */
+/*  6 ==================================================== */
 
 .inf-image-left img {
+    max-width: 870px;
     width: 100%;
     height: auto;
-    max-width: 870px;
     border-radius: 60px 60px 60px 0px;
+    /* margin-top: 211px; */
 }
 
 .inf-card {
@@ -591,13 +670,29 @@
     margin-top: 20px;
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 1000px) {
+
+    .information-container {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+
     .inf-image-left img {
+        max-width: 48%;
         border-radius: 20px 20px 0px 20px;
+        margin-right: 14.22px;
+        margin-left: 14.22px;
+    }
+    .inf-card {
+        width: 48%;
+    }
+
+    .inf-card {
+        max-width: 48%;
     }
  }
 
-/* ==================================================== */
+/*  7 ==================================================== */
 
 .bgn-footer {
     padding-top: 100px;
@@ -654,14 +749,42 @@
 
 .inf-footer {
     text-decoration: none;
-    padding-top: 197px;
+    /* padding-top: 197px; */
     padding-bottom: 40px;
     color: #FFFFFF;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 1000px) {
+
+    .bgn-footer {
+        /* display: flex; */
+        margin-top: 100px;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        left: 20px;
+    }
+
     .footer-logo {
         width: 124px;
         height: 36px;
+        padding-left: 20px;
+        padding-bottom: 40px;
+    }
+
+    .footer-box {
+        font-size: 12px;
+    }
+
+    .footer-header {
+        font-size: 14px;
+    }
+
+    .inf-footer {
+        font-size: 12px;
+        padding-top: 100px;
+        padding-bottom: 28px;
     }
  }
