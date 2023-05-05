@@ -4,6 +4,9 @@
     padding: 0;
 }
 
+.bgn-image {
+    position: relative;
+}
 
 .container {
     max-width: 1760px;
@@ -11,28 +14,22 @@
 }
 
 .interior {
+    z-index: 100;
+    position: relative;
     margin: 0 auto;
 }
 
-.bgn-image {
-    background-image: url(./Asets/img/head_img.jpg);
-    padding-bottom: 388px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    /* not work */
-    max-width: 100%;  
-}
-
 .header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 38px;
     height: 100%;
+    z-index: 100;
 }
 
-.hamb {
+.hambburger {
     display: none;
   }
   
@@ -106,6 +103,7 @@
 }
 
 .search-blok {
+    z-index: 100;
     position: relative;
     width: 360px;
     margin: 0 auto;
@@ -116,6 +114,26 @@
     top: 11px;
     left: 313px;
 }
+
+/* =======================================  Slider  ======================================== */
+
+.slider-position {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* =======================================  allow  ======================================== */
+
+/* .image-slider .swiper-button-prev::after,
+.image-slider .swiper-button-next::after{
+    color:#fff;
+    font-size: 80px;
+} */
+
+/* ====================================   pagination   =================================== */
+
+/* ======================================================================================== */
 
 @media screen and (max-width: 1000px) {
 
@@ -138,13 +156,6 @@
         top: 22px;
     }
 
-    /* .hamb__field {
-        width: 24px;
-        height: 24px;
-        left: 297px;
-        top: 22px;
-    } */
-
     .interior-slogan {
         font-size: 18px;
     }
@@ -164,15 +175,16 @@
     }    
 }
 
+/* ==================================   Hamburger Mobile   ========================================= */
+
 @media screen and (max-width: 1000px) {
   
-    .hamb {
+    .hamburger {
       display: flex;
-      margin-left: auto;
-      /* align-items: center; */
+      margin-left: auto;   
     }
   
-    .hamb__field {
+    .hamburger__field {
       /* padding: 10px 20px; */
       cursor: pointer;
       margin-right: 20px;
@@ -237,15 +249,15 @@
   
     /* При нажатии на иконку бургер к попапу добавится класс active и свойство right будет равным 0. 
     То есть наш попап открывается справо.  */
-    .hamb__field.active .bar:nth-child(2) {
+    .hamburger__field.active .bar:nth-child(2) {
       opacity: 0;
     }
   
-    .hamb__field.active .bar:nth-child(1) {
+    .hamburger__field.active .bar:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
     }
   
-    .hamb__field.active .bar:nth-child(3) {
+    .hamburger__field.active .bar:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
     }
   
@@ -258,7 +270,7 @@
   }
     
 
-/* 2 ==================================================== */
+/* 2 ============================================================================================ */
 
 .chooses-header {
     margin-top: 80px;
@@ -340,7 +352,7 @@
     }
 }  
 
-/* 3  ==================================================== */
+/* 3  ==================================================================================== */
 
 .information-container {
     display: flex;
@@ -420,7 +432,7 @@
     }  
 }
 
-/*  4 ==================================================== */
+/*  4 ===================================================================================== */
 
 .chooses-header {
     margin-top: 200px;
@@ -494,7 +506,7 @@
    }
 }
 
-/*  5 ==================================================== */
+/*  5 ========================================================================================== */
 
 .review-box {
     background: linear-gradient(279.85deg, #FFFFFF 0%, #FAF5F2 100%);
@@ -614,7 +626,7 @@
     }
  }
 
-/*  6 ==================================================== */
+/*  6 ============================================================================================= */
 
 .inf-image-left img {
     max-width: 870px;
@@ -688,7 +700,7 @@
     }
  }
 
-/*  7 ==================================================== */
+/*  7 ======================================================================================= */
 
 .bgn-footer {
     padding-top: 100px;

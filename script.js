@@ -1,4 +1,6 @@
-const hamb = document.querySelector("#hamb");
+// ==============================   Burger    =========================================
+
+const hamb = document.querySelector("#hamburger");
 const popup = document.querySelector("#popup");
 const body = document.body;
 
@@ -37,3 +39,18 @@ function closeOnClick() {
   hamb.classList.remove("active");
   body.classList.remove("noscroll");
 }
+
+// ==============================   Slider   ============================================
+
+new Swiper('.image-slider', {
+
+  pagination: {
+    el: '.swiper-pagination',
+    
+    clickable: true,
+    type: 'bullets',
+    
+    dynamicBullets: true,
+  },
+
+});
