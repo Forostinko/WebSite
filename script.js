@@ -46,11 +46,15 @@ new Swiper('.image-slider', {
 
   pagination: {
     el: '.swiper-pagination',
-    
+    //bullets
     clickable: true,
     type: 'bullets',
-    
+    //dinamics
     dynamicBullets: true,
   },
 
 });
+
+
+
+
