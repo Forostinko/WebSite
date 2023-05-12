@@ -40,20 +40,39 @@ function closeOnClick() {
   body.classList.remove("noscroll");
 }
 
+
 // ==============================   Slider   ============================================
 
 new Swiper('.image-slider', {
 
   pagination: {
     el: '.swiper-pagination',
+    
     //bullets
     clickable: true,
     type: 'bullets',
+
     //dinamics
     dynamicBullets: true,
-  },
 
+    //click on slide
+    slideToClickedSlide: true,
+    
+    slidesPerView: 1,
+  },
 });
+
+
+// const mySwiper = new Swiper('.image-slider', {
+//   slidesPerView: 1,
+//   spaceBetween: 30,
+//   loop: true,
+//   pagination: {
+//     el: '.swiper-pagination',
+//     clickable: true,
+//   },
+// });
+
 
 
 
