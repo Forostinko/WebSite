@@ -57,8 +57,6 @@ new Swiper('.image-slider', {
 
     //click on slide
     slideToClickedSlide: true,
-    
-    slidesPerView: 1,
   },
 });
 
