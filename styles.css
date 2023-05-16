@@ -8,12 +8,6 @@
     position: relative;
 } 
 
-/* .bgn-image {
-    position: relative;
-    overflow: hidden;
-    height: 1000px;
-} */
-
 .image-slider {
     height: 1000px;
     overflow: hidden;
@@ -43,7 +37,7 @@
     /* flex-wrap: nowrap;
     justify-content: center;
     align-items: center; */
-    
+   
     width: 10px !important;
     height: 10px !important;
     background-color: #F79489 !important;
@@ -157,25 +151,6 @@
     left: 313px;
 }
 
-/* =======================================  Slider  ======================================== */
-
-.slider-position {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-/* ====================================   pagination   =================================== */
-
-/* NOT WORK! */
-.image-slider .swiper-pagination-bullet {
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    background: #F79489;
-    border: 1px solid #F79489;
-}
-
 /* ======================================================================================== */
 
 @media screen and (max-width: 1000px) {
@@ -202,9 +177,11 @@
     .interior-slogan {
         font-size: 18px;
     }
+
     .interior-text {
         font-size: 12px; 
     }
+
     .interior-search {
         width: 280px;
         height: 38px;
