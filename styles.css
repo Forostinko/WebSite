@@ -153,6 +153,62 @@
 
 /* ======================================================================================== */
 
+.header__burger-btn {
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-left: 529px;
+    z-index: 2;
+}
+
+.header__burger-btn span {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    left: 10px;
+    background-color: #FFFFFF;
+
+    /* animation */
+    transition:  background-color .3S, opasity .3s, transform .5s;
+    will-change: transform;
+    cursor: pointer;
+}
+
+.header__burger-btn span:nth-child(1) {
+    transform: translateY(-10px);
+}
+
+.header__burger-btn span:nth-child(2) {}
+
+.header__burger-btn span:nth-child(3) {
+    transform: translateY(10px);
+}
+
+/* Cross */
+
+.container-header.open .header__burger-btn span {
+    background-color: #FEFCFB;
+}
+
+.container-header.open .header__burger-btn span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+}
+
+.container-header.open .header__burger-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.container-header.open .header__burger-btn span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
+}
+
+/* ======================================================================================== */
+
 @media screen and (max-width: 1000px) {
 
     .wrapper {   
@@ -198,6 +254,49 @@
 /* ==================================   Hamburger Mobile   ========================================= */
 
 @media screen and (max-width: 1000px) {
+    .header__burger-btn {
+        display: block;
+    }
+
+    .header-nav {
+        position: absolute;
+        right: -350;
+        top: 0;
+        width: 350px;
+        padding: 75px 20px 20px 20px;
+        background-color: #F79489;
+        visibility: hidden;
+        z-index: 2;
+    }
+
+    #menu {
+        display: block;
+    }
+    
+    .nav-element {
+        font-size: 21px;
+        display: block;
+        padding: 10px;
+        margin-right: 0;
+    }
+
+    /* NOT WORK! */
+    .container-header.open .nav.header-nav {
+        transform: translateX(-100%);
+        visibility: visible;
+        transition: transform .5s, visibility .5s;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* @media screen and (max-width: 1000px) {
   
     .hamburger {
       display: flex;
@@ -206,7 +305,7 @@
   
     .hamburger__field {
       /* padding: 10px 20px; */
-      cursor: pointer;
+      /* cursor: pointer;
       margin-right: 20px;
     }
   
@@ -221,17 +320,17 @@
     }
   
     .popup {
-      position: fixed;
-      top: 75px;
+      position: fixed; */
+      /* top: 75px; */ */
       /* чтобы скрыть его в right части */
-      right: -100%;
+      /* right: -100%;
       width: 100%;
       height: 100%;
       background-color: #fff;
       z-index: 100;
-      display: flex;
+      display: flex; */
       /* А чтобы он делал это плавно мы добавили к popup свойство transition: 0.3s. */
-      transition: 0.3s;
+      /* transition: 0.3s;
     }
   
     .popup.open {
@@ -266,10 +365,10 @@
     .popup .menu > li > a:hover {
       background-color: rgba(122, 82, 179, 0.1);
     }
-  
+   */
     /* При нажатии на иконку бургер к попапу добавится класс active и свойство right будет равным 0. 
     То есть наш попап открывается справо.  */
-    .hamburger__field.active .bar:nth-child(2) {
+    /* .hamburger__field.active .bar:nth-child(2) {
       opacity: 0;
     }
   
@@ -279,16 +378,16 @@
   
     .hamburger__field.active .bar:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
-    }
+    } */
   
     /* Также при вызове popup мы блокируем прокрутку экрана у глобального тега body. 
     Для этого добавляем ему класс body.noscroll со значением overflow: hidden. */
 
-    body.noscroll {
+    /* body.noscroll {
       overflow: hidden;
     }
   }
-    
+     */
 
 /* 2 ============================================================================================ */
 
@@ -455,7 +554,7 @@
 /*  4 ===================================================================================== */
 
 .chooses-header {
-    margin-top: 200px;
+    /* margin-top: 200px; */
     margin-bottom: 40px;
     font-family: Poppins;
     text-align: center;
